@@ -33,9 +33,16 @@ header {
 /* ======== GALERÍA ======== */
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   padding: 40px;
+  justify-items: center;
+}
+
+/*En caso de que no funcione, tengo que eliminar .galeria .card*/
+.galeria .card {
+  width: 100%;
+  max-width: 350px;
 }
 
 /* ======== TARJETAS ======== */
