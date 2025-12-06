@@ -54,7 +54,7 @@ header {
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  height: 600px; /* todas las tarjetas mismo tamaño */
+  height: 650px; /* todas las tarjetas mismo tamaño */
 }
 
 .card:hover {
