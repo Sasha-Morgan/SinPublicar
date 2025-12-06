@@ -2,10 +2,8 @@
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  background-color: #000417;
-  /* fondo general oscuro */
-  color: #e0e0e0;
-  /* texto claro general */
+  background-color: #000417; /* fondo general oscuro */
+  color: #e0e0e0; /* texto claro general */
 }
 
 /* ======== HEADER ======== */
@@ -43,14 +41,13 @@ header {
 /* ======== TARJETAS ======== */
 .card {
   background: #1c1c1c;
-  /* fondo oscuro */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 600px; /* todas las tarjetas mismo tamaño */
 }
 
 .card:hover {
@@ -74,23 +71,28 @@ header {
   text-align: center;
 }
 
-/* ======== TEXTO DE LAS TARJETAS ======== */
-.card p:not(.protagonistas) {
+/* ======== CONTENEDOR DE TEXTO CON SCROLL ======== */
+.texto-card {
+  flex: 1 1 auto;
+  min-height: 0;              /* IMPORTANTE PARA QUE EL SCROLL FUNCIONE */
+  overflow-y: auto;           /* barra de desplazamiento */
   margin: 10px;
+  padding-right: 5px;
+}
+
+/* ======== PÁRRAFOS DENTRO DEL TEXTO ======== */
+.texto-card p {
+  margin: 0 0 12px 0;         /* espacio entre párrafos */
   color: #f0f4f6;
   font-size: 0.9em;
   text-align: justify;
-  flex-grow: 1;
-  overflow-y: auto;
-  padding-right: 5px;
 }
 
 /* ======== LÍNEA DE PROTAGONISTAS ======== */
 .protagonistas {
   color: #e6e6e6;
-  /* texto claro sobre fondo oscuro */
   font-weight: 500;
-  margin: 8px 10px 4px 10px;
+  margin: 8px 10px 10px 10px;
   line-height: 1.3;
   overflow: visible;
   flex: 0 0 auto;
@@ -99,7 +101,6 @@ header {
 
 .protagonistas strong {
   color: #c40571;
-  /* azul para "Protagonistas:" */
 }
 
 /* ======== LINK CENTRADO ======== */
@@ -157,11 +158,11 @@ footer h3 {
 }
 
 /* ======== SCROLL PERSONALIZADO ======== */
-.card p::-webkit-scrollbar {
+.texto-card::-webkit-scrollbar {
   width: 6px;
 }
 
-.card p::-webkit-scrollbar-thumb {
+.texto-card::-webkit-scrollbar-thumb {
   background-color: #4a4c48;
   border-radius: 6px;
 }
@@ -177,11 +178,9 @@ footer p.copyright {
   margin-top: 25px;
   font-size: 0.9em;
   color: white;
-  /* cian, combina con los títulos */
 }
 
 footer p.copyright span {
-  color: white (248, 250, 246);
-  /* verde del header */
+  color: white;
   font-weight: bold;
 }
